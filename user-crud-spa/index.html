@@ -14,21 +14,12 @@
 <body onhashchange="pageChange()">
   <!-- tabbar navigation -->
   <nav class="tabbar">
-    <a href="#home">Home</a>
     <a href="#users">Users</a>
+    <a href="#create">Create</a>
   </nav>
 
   <!-- pages -->
-  <!-- home page -->
-  <section id="home" class="page">
-    <header class="topbar">
-      <h2>Home</h2>
-    </header>
-    <h3>SPA Template Plain</h3>
-    <p>My Single Page Web App Template</p>
-  </section>
-
-  <!-- persons page -->
+  <!-- users page -->
   <section id="users" class="page">
     <header class="topbar">
       <h2>Users</h2>
@@ -47,9 +38,23 @@
     <form>
       <input type="text" id="name" placeholder="Type your name" required>
       <input type="email" id="mail" placeholder="Type your mail" required>
-      <button type="button" name="button" onclick="createUser()">Save User</button>
+      <button type="button" name="button" onclick="createUser()">Create User</button>
     </form>
   </section>
+
+    <!-- edir user page -->
+    <section id="update" class="page">
+      <header class="topbar">
+        <a class="left" href="#users">Back</a>
+        <h2>Update user</h2>
+        <a class="right" onclick="updateUser()">Update</a>
+      </header>
+      <form>
+        <input type="text" id="name-update" placeholder="Type your name" required>
+        <input type="email" id="mail-update" placeholder="Type your mail" required>
+        <button type="button" name="button" onclick="updateUser()">Update User</button>
+      </form>
+    </section>
 
   <!-- loader  -->
   <div id="loader">
