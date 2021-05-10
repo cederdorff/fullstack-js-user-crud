@@ -5,17 +5,15 @@ const port = 3000;
 const fs = require('fs');
 
 app.use(express.json()); //Used to parse JSON bodies
-app.use(express.urlencoded({
-    extended: true
-})); //Parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
 app.use(cors()); //Enable All CORS Requests
 
 
 app.get('/', (req, res) => {
-    res.send('Hello User API!')
+    res.send('Hello User API!');
 });
 
-// READ: get all users
+// READ: get all users from users.json
 app.get('/users', (req, res) => {
     const users = fs.readFileSync('./users.json', 'utf8');
     console.log(users);
@@ -31,7 +29,7 @@ app.get('/users/:id', (req, res) => {
     return res.json(user);
 });
 
-// CREATE: create new user
+// CREATE: create new user and add to users.json 
 app.post('/users', (req, res) => {
     let newUser = req.body;
     const timestamp = Date.now(); // dummy generated user id
@@ -68,5 +66,5 @@ app.delete('/users/:id', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Users REST JSON API listening at http://localhost:${port}`);
 })
