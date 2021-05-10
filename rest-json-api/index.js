@@ -8,7 +8,7 @@ app.use(express.json()); //Used to parse JSON bodies
 app.use(express.urlencoded({
     extended: true
 })); //Parse URL-encoded bodies
-app.use(cors());
+app.use(cors()); //Enable All CORS Requests
 
 
 app.get('/', (req, res) => {
